@@ -1,0 +1,7 @@
+{
+  "preset": "jquery",
+  "maximumLineLength": {
+    "value": 120,
+    "allExcept": ["comments", "regex"]
+  }
+}

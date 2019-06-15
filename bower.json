@@ -1,0 +1,26 @@
+{
+  "name": "template",
+  "version": "0.0.1",
+  "authors": [
+    "Giuseppe Scalese <scalese.giuseppe@gmail.com>"
+  ],
+  "description": "Built by Giuseppe Scalese",
+  "main": "index.html",
+  "keywords": [
+    "SASS",
+    "Bower",
+    "Jade"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "susy": "~2.2.12",
+    "slick-carousel": "^1.8.1"
+  }
+}

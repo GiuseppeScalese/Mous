@@ -1,0 +1,92 @@
+// Colours
+// --------------------------------------------------
+
+$black: #000000;
+$white: #FFFFFF;
+$white-smoke: rgb(245,245,245);
+$grey: #373737;
+$grey-2: #2A2A2A;
+$fade-grey: #C8C8C8;
+$light-grey: #F3F3F3;
+$faint-grey: #cfcfcf;
+$very-light-grey: #767676;
+$fade-black: #181818;
+$purple: #2B1657;
+$blue: #1E185A;
+$pink: #D2047B;
+$pink-2: #D3047B;
+$orange: #F6A400;
+$red: #ff3333;
+
+//buttons colours
+$button-yellow: #F6A400;
+$button-blue: #1E185A;
+$button-white: #FFFFFF;
+$button-grey: #373737;
+$button-black: #000000;
+
+// Typography
+// --------------------------------------------------
+
+//font type
+$open-sans-reg:'OpenSans-Regular';
+$open-sans-bold:'OpenSans-Bold';
+$open-sans-semibold:'OpenSans-SemiBold';
+
+//base font variables
+$base-font-family: Helvetica, $open-sans-reg, Arial, sans-serif, Verdana;
+$open-sans-regular-font-family: $open-sans-reg, $base-font-family;
+$open-sans-bold-font-family: $open-sans-bold, $base-font-family;
+
+
+$base-font-size: 16;
+$heading-scale: 10;
+$base-font-size-buttons: 16;
+$text-size--x-small: 12;
+$text-size--small: 14;
+$text-size--small-medium: 17;
+$text-size--medium: 24;
+$text-size--medium-large: 30;
+$text-size--large: 36;
+$text-size--very-large: 40;
+$text-size--x-large: 55;
+$text-size--xx-large: 75;
+
+$base_line: 1.5;
+$text_line--small: 0.85;
+$text_line--x-small: 1.5;
+$text_line--medium: 1.3;
+$text_line--large: 1.4;
+$text_line--very-large: 40px;
+$text_line--x-large: 50px;
+$text-line--xx-large: 1.1;
+
+
+// Media query breakpoints
+// --------------------------------------------------
+
+// Extra small devices (landscape phones, 34em and up) - 554px
+$screen-xs-min: 34em;
+// Medium devices (tablets, 48em and up) -768px
+$screen-sm-min: 640px; // double 320px
+// Large devices (desktops, 62em and up) - 992px
+$screen-md-min: 960px;
+// Super large devices (large desktops, 75em and up) - 1200px
+$screen-lg-min: 75em;
+// Extra large devices (Extra large desktops, 1500em and up) - 1500px
+$screen-xl-min: 1500px;
+//parallax min screen size
+$screen-parallax-min: 1025px;
+//max height screen size
+$screen-height-max: 670px;
+
+// Extra small devices (portrait phones, less than 34em)
+$screen-xs-max: ($screen-xs-min - 0.1);
+// Medium devices (landscape phones, less than 48em)
+$screen-sm-max: ($screen-sm-min - 0.1);
+// Large devices (tablets, less than 62em)
+$screen-md-max: ($screen-md-min - 0.1);
+// Super large devices (desktops, less than 75em)
+$screen-lg-max: ($screen-lg-min - 0.1);
+// Extra large devices (desktops, less than 75em)
+$screen-xl-max: ($screen-xl-min - 0.1);

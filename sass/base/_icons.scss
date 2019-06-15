@@ -1,0 +1,44 @@
+//Icons elements global
+
+.icon-hamburger, .icon-close-white-bg, .icon-cart{
+  background-size: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.icon-down-ico{
+  background-image: url(/images/svg/icon-down-purple-bg.svg);
+}
+
+.icon-right-ico{
+  background-image: url(/images/svg/icon-right-purple-bg.svg);
+}
+
+.icon-right-white-bg-ico{
+  background-image: url(/images/svg/icon-right-white-bg.svg);
+}
+
+.icon-close-white-bg{
+  background-image: url(/images/icons/close-white-bg-round.svg);
+}
+
+.icon-close-purple-bg{
+  background-image: url(/images/svg/close-purple-bg.svg);
+}
+
+.icon-hamburger{
+  background-image: url(/images/icons/mobile-open-menu.svg);
+}
+
+.icon-cart {
+  background-image: url(/images/icons/cart-icon.png);
+}
+
+.icon-close-white-bg, .icon-close-purple-bg {
+  position: absolute;
+  top: 25px;
+  height: 40px;
+  width: 40px;
+  background-size: 40px;
+  background-repeat: no-repeat;
+
+}

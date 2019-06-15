@@ -1,0 +1,34 @@
+mixin image(aspectRatio, filter, desktopSrc, mobileSrc)
+	//- Error catching
+	unless aspectRatio
+		p ERROR: You must input an aspect ratio as the first argument of the image mixin
+	
+	unless desktopSrc
+		p ERROR: You must input a src as the third argument of the image mixin
+		
+	//- Create comments
+	if mobileSrc
+		if filter
+			// Responsive image with a mobile and desktop image and a filter
+		else
+			// Responsive image with a mobile and desktop image
+	else
+		if filter
+			// Responsive image with desktop only image and a filter
+		else
+			// Responsive image with desktop only image
+
+	//- Create image
+	.image-container(class="image-container--#{aspectRatio}")
+			if mobileSrc
+				img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-sizes="auto" data-src=mobileSrc data-srcset="" alt="This is some fake alt text").lazyload.mobile-only
+				img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-sizes="auto" data-src=desktopSrc data-srcset="" alt="This is some fake alt text").lazyload.desktop-only
+			else
+				img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-sizes="auto" data-src=desktopSrc data-srcset="" alt="This is some fake alt text").lazyload
+
+			if filter
+				.filter
+	// Responsive image ends
+
+mixin image-no-aspect(src)
+	img(src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-sizes="auto" data-src=src data-srcset="" alt="This is some fake alt text").lazyload

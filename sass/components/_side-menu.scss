@@ -1,0 +1,54 @@
+$base: '.sidenav';
+
+#{$base} {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  background-color: $black;
+	transform: translateX(-100%);
+	opacity: 0;
+	@include transition();
+
+	@include breakpoint(sm) {
+		width: 400px;
+	}
+
+	&.open-sidenav {
+		transform: translateX(0%);
+		opacity: 1;
+	}
+
+  &__list-box {
+    margin-top: 70px;
+    overflow-y: auto;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    height: 100%;
+  }
+
+	&__close {
+
+    background-position: right;
+		right: 15px;
+    top: 15px;
+		cursor: pointer;
+	}
+
+	&__list {
+		padding: 0 15px 80px 15px;
+
+		@include breakpoint(sm) {
+			padding: 65px 30px 30px;
+		}
+	}
+
+	&__item {
+		padding: 10px 0;
+
+		a {
+	  	@include text($text-size--medium, $text-size--medium, $text_line--medium);
+		}
+	}
+}

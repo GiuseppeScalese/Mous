@@ -1,0 +1,176 @@
+//Form elements style global
+
+ form{
+   	@include text($base-font-size, $base-font-size, $text_line--small);
+    font-family:inherit;
+    width:100%;
+ }
+
+	input, label, textarea, select{
+    	@include font-size(16px);
+    	font-family:inherit;
+      color: $grey;
+      outline: transparent;
+      padding: 10px;
+	}
+
+  input.blue-border, textarea.blue-border, select.blue-border{
+		  border: 2px solid $blue;
+	}
+
+	label{
+		text-align: left;
+		&.visually-hidden{
+		  border: 0;
+		  clip: rect(0 0 0 0);
+		  height: 1px;
+		  margin: -1px;
+		  overflow: hidden;
+		  padding: 0;
+		  position: absolute;
+		  width: 1px;
+		}
+	}
+
+	textarea{
+  		display: block;
+  		margin: 20px 0;
+  		width: 100%;
+  		height: 100px;
+  		padding: 10px;
+	}
+
+
+	select{
+  		padding: 5px 40px 5px 20px;
+  		-webkit-appearance: none;
+      -moz-appearance: none;
+  		background-color: $white;
+  		height: 30px;
+  		width: 100%;
+      color: $blue;
+      font-family: $open-sans-bold-font-family;
+  		cursor: pointer;
+	}
+
+	//remove IE default drop down icon
+	select::-ms-expand {
+    	display: none;
+	}
+
+
+	input{
+		width:100%;
+			outline: none;
+		&[type="checkbox"], &[type="radio"]{
+			display: none;
+		 + label{
+			position: relative;
+			cursor: pointer;
+			vertical-align: middle;
+		 }
+			&:before{
+  				content: "";
+  				border: 1px solid $grey;
+  				background-color: $white;
+  				@include rounded-corners(50%);
+  				width: 17px;
+  				height: 17px;
+  				display: inline-block;
+  				vertical-align: middle;
+  				margin-right: 5px;
+			}
+		}
+
+		&[type="checkbox"]{
+		 	+ label{
+				&:before{
+					border-radius: 0;
+					margin-right: 10px;
+				}
+			}
+		}
+
+		&:checked{
+			+ label:after{
+				content: "";
+				border-radius: 50%;
+				width: 9px;
+				height: 9px;
+				position: absolute;
+				left: 5px;
+				top: 5px;
+			}
+		}
+		/* Fix for Safari as it doesn't render well input search types */
+		&[type="search"]{
+		   -moz-appearance:none;
+		   -webkit-appearance:none;
+		}
+
+    &[type="text"]:-moz-placeholder,
+    &[type="search"]:-moz-placeholder,
+    &[type="password"]:-moz-placeholder,
+    &[type="number"]:-moz-placeholder,
+    &[type="text"]::-moz-placeholder,
+    &[type="search"]::-moz-placeholder,
+    &[type="password"]::-moz-placeholder,
+    &[type="number"]::-moz-placeholder,
+    &[type="text"]:ms-input-placeholder ,
+    &[type="search"]:ms-input-placeholder,
+    &[type="password"]:ms-input-placeholder,
+    &[type="number"]:ms-input-placeholder
+    {
+        @include font-size($base-font-size-buttons);
+        color: $grey;
+    }
+
+		&[type="text"]::-webkit-input-placeholder,
+		&[type="search"]::-webkit-input-placeholder,
+		&[type="password"]::-webkit-input-placeholder,
+		&[type="number"]::-webkit-input-placeholder
+	 	{
+	 		@include text($base-font-size-buttons, $base-font-size-buttons, $text_line--small);
+	 		color: $grey;
+		}
+
+		//remove X icon in IE when typing in input field
+		&[type="text"]::-ms-clear,
+		&[type="search"]::-ms-clear,
+		&[type="password"]::-ms-clear,
+		&[type="number"]::-ms-clear {
+		    display: none;
+		    width: 0;
+		    height: 0;
+		}
+
+		&[type="text"],
+		&[type="search"],
+		&[type="password"],
+		&[type="number"]{
+  			height: 35px;
+        width: 45px;
+  			@include text($base-font-size-buttons, $base-font-size-buttons, $text_line--small);
+  			font-family: $open-sans-reg;
+        color: $blue;
+		}
+	}
+
+  input.blue, select.blue {
+      background-color: $blue;
+      border: 1px solid $white;
+      color: $white;
+      font-family: $open-sans-bold-font-family;
+  }
+
+  input.blue::placeholder {
+      color: $white;
+  }
+
+  input.blue:-webkit-autofill,
+  input.blue:-webkit-autofill:hover,
+  input.blue:-webkit-autofill:focus
+   {
+      -webkit-text-fill-color: $white;
+      -webkit-box-shadow: 0 0 0px 1000px $blue inset;
+  }

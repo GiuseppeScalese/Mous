@@ -1,0 +1,104 @@
+// Show / Hide
+.mobile-only {
+    @include breakpoint($screen-sm-max) {
+        display: none !important;
+	}
+}
+
+.desktop-only {
+    @include breakpoint(0,$screen-sm-max) {
+        display: none !important;
+	}
+}
+
+// Screen reader Only
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}
+
+.no-scroll {
+  overflow-y: hidden !important;
+}
+
+.no-scroll-ios {
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+// For links
+.noUnderline {
+    a {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+}
+
+.hidden-link {
+    color: black;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+        text-decoration: underline;
+    }
+}
+
+// Hide featherlight boxes before opened
+.fl {
+    display: none;
+}
+
+// Unstyle lists
+ul.noDots {
+    list-style: none;
+    padding-left: 0;
+}
+
+.transparentButton {
+    background: transparent;
+    border: 0;
+}
+
+.verticalAlignParent {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.verticalAlignChild {
+    display: table-cell;
+    vertical-align: middle;
+    height: 100%;
+}
+
+// Magnific popup helper classes
+.mfp-wrap {
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateZ(0);
+}
+
+html.mfp-helper {
+  height: 100%;
+
+  body {
+    overflow: hidden;
+    height: 100%;
+    -webkit-transform: translateZ(0);
+  }
+}
+
+.iScrollVerticalScrollbar {
+    display: none;
+}

@@ -1,0 +1,49 @@
+doctype html
+
+<!--[if IE 9]>
+<html class="no-js ie9" lang="en">
+<![endif]-->
+<!--[if gt IE 9]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+html
+  head
+    meta( charset="utf-8" )
+    meta( http-equiv="X-UA-Compatible", content="IE=edge" )
+    title Test
+    meta( name="description", content="" )
+    meta( name="viewport", content="width=device-width, initial-scale=1" )
+    link( rel="stylesheet", href="css/style.css" )
+    link( rel="stylesheet", href="/bower_components/slick-carousel/slick/slick.css")
+    link( rel="stylesheet", href="/bower_components/slick-carousel/slick/slick-theme.css")
+    block styles
+
+  block vars
+
+  body
+    include components/side-menu
+    #wrapper
+      // header starts
+      include partials/header
+      #main
+        // page specific content starts
+
+        block content
+        // page specific content ends
+
+      // footer starts
+      include partials/footer
+
+    // local scripts for client dependencies. Keep order.
+    //- Vendor
+    script( src="/scripts/vendor/jquery-3.3.1.min.js")
+    script( src="/bower_components/slick-carousel/slick/slick.min.js")
+
+    //- Custom
+    script( src="/scripts/components/main.js" )
+
+    // local scripts ends
+
+    // page specific scripts start
+    block scripts
+    // page specific scripts ends

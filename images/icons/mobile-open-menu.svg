@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="18px" viewBox="0 0 21 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47 (45396) - http://www.bohemiancoding.com/sketch -->
+    <title>MobileMenu / Purple</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="MobileMenu-/-LightBG" transform="translate(-336.000000, -32.000000)" stroke="#1E185A" stroke-width="3">
+            <g id="MobileMenu-/-Purple" transform="translate(338.000000, 26.000000)">
+                <path d="M14.8305545,1.7870438 L2.80973926,13.8078591" id="Line" transform="translate(8.820147, 7.797451) scale(-1, 1) rotate(45.000000) translate(-8.820147, -7.797451) "></path>
+                <path d="M14.8305545,8.7870438 L2.80973926,20.8078591" id="Line-Copy" transform="translate(8.820147, 14.797451) scale(-1, 1) rotate(45.000000) translate(-8.820147, -14.797451) "></path>
+                <path d="M14.8305545,15.7870438 L2.80973926,27.8078591" id="Line-Copy-2" transform="translate(8.820147, 21.797451) scale(-1, 1) rotate(45.000000) translate(-8.820147, -21.797451) "></path>
+            </g>
+        </g>
+    </g>
+</svg>

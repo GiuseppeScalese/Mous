@@ -1,0 +1,231 @@
+// https://medium.com/developing-with-sass/creating-a-dead-simple-sass-mixin-to-handle-responsive-breakpoints-889927b37740#.ycbn1yav5
+// https://gist.github.com/timknight/03e6335b8816aa534cf7
+@mixin breakpoint($min: 0, $max: 0) {
+  $type: type-of($min);
+
+  @if $type == string {
+    @if $min == xs {
+      @media (min-width: $screen-xs-min) { @content; }       // Mobile Devices
+    }
+
+    @else if $min == sm {
+      @media (min-width: $screen-sm-min) { @content; }       // Tablet Devices
+    }
+
+    @else if $min == md {
+      @media (min-width: $screen-md-min) { @content; }       // Desktops
+    }
+
+    @else if $min == lg {
+      @media (min-width: $screen-lg-min) { @content; }      // Widescreen Desktops
+    }
+
+		@else if $min == xl {
+      @media (min-width: $screen-xl-min) { @content; }      // Widescreen Desktops
+    }
+
+    // Otherwise pass a warning to the compiler as to the appropriate options
+    @else {
+      @warn "The breakpoint mixin supports the following attributes: xs, sm, md, lg";
+    }
+  }
+  @else if $type == number {
+    // Allow for custom parameters for min and max size
+    $query: "all" !default;
+    @if      $min != 0 and $max != 0 { $query: "(min-width: #{$min}) and (max-width: #{$max})"; } // set both min and max
+    @else if $min != 0 and $max == 0 { $query: "(min-width: #{$min})"; } // set just min
+    @else if $min == 0 and $max != 0 { $query: "(max-width: #{$max})"; } // set just max
+    @media #{$query} { @content; }
+  }
+}
+
+// Clearfix
+@mixin clearfix {
+  &:after {
+    content: ' ';
+    display: table;
+    clear: both;
+  }
+}
+
+//buttons style and buttons states mixins
+@mixin btn-theme($btn-color){
+   background-color: $btn-color;
+   @include transition();
+
+   &:hover {
+     @include transition();
+     @include transform(scale(1.03));
+   }
+
+   &:active {
+    //add active behaviour
+  }
+
+  &:after{
+    display: block;
+    content: '';
+    height: 10px;
+    width: 10px;
+    background-size: 10px;
+    position: absolute;
+    left: 10px;
+    top: 0px;
+    @include font-size(17px);
+  }
+}
+
+//mixin for rounded corners
+@mixin rounded-corners($radius) {
+  -webkit-border-radius: $radius;
+  border-radius: $radius;
+}
+
+//font-size mixin - Fallback when pixel isn't supported in IE8 and below
+@function calculateRem($size) {
+  $remSize: $size / $base-font-size;
+  @return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size; //Fallback in px
+  font-size: calculateRem($size);
+}
+
+
+//mixin for colour gradient
+@mixin linear-gradient($top, $bottom){
+    background: $top; /* Old browsers */
+    background: -moz-linear-gradient(top,  $top 0%, $bottom 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,$top), color-stop(100%,$bottom)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  $top 0%,$bottom 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  $top 0%,$bottom 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  $top 0%,$bottom 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  $top 0%,$bottom 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#000000',GradientType=0 ); /* IE6-9 */
+}
+
+// Responsive text font mixin
+@mixin text($small-size,$large-size,$line-height-multiplier:1.1) {
+
+  // Variables
+  $smallestWidth:400;
+  $largestWidth:1200;
+  $n:5;
+
+  // Default mobile first
+  font-size: $small-size+px;
+  line-height: $small-size*$line-height-multiplier+px;
+
+  // Interpolate between the small and large sizes
+  @for $i from 0 through $n {
+    $width: $smallestWidth+($largestWidth - $smallestWidth) / $n * $i;
+    $size: $small-size + ($large-size - $small-size) / $n * $i;
+    @media(min-width:$width+px){
+      font-size: $size+px;
+      line-height: $size*$line-height-multiplier+px;
+    }
+  }
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation ($delay, $duration, $animation, $direction: normal, $fillmode: forwards) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-fill-mode: $fillmode;
+    -webkit-animation-direction: $direction;
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-fill-mode: $fillmode;
+    -moz-animation-direction: $direction;
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-fill-mode: $fillmode;
+    animation-direction: $direction;
+}
+
+//Link hover transition mixin
+@mixin hover-transition($color, $transition_speed){
+  -webkit-transition: color $transition_speed ease,text-decoration $transition_speed ease ;
+  -moz-transition: color $transition_speed ease,text-decoration $transition_speed ease ;
+  -o-transition: color $transition_speed ease,text-decoration $transition_speed ease ;
+  -ms-transition: color $transition_speed ease,text-decoration $transition_speed ease ;
+  transition: color $transition_speed ease, text-decoration $transition_speed ease ;
+}
+
+/* @include transition(all,2s,linear); */
+@mixin transition($what: all, $time: 0.2s, $how: linear) {
+    -webkit-transition: $what $time $how;
+    -moz-transition:    $what $time $how;
+    -ms-transition:     $what $time $how;
+    -o-transition:      $what $time $how;
+    transition:         $what $time $how;
+}
+
+// Browser Prefixes
+@mixin transform($transforms) {
+	-webkit-transform: $transforms;
+	-moz-transform: $transforms;
+	-ms-transform: $transforms;
+	transform: $transforms;
+}
+
+
+// Antialiasing mode font rendering
+@mixin font-smoothing {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+%visuallyhidden {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+// Keep aspect ratio
+// EG: @include aspect-ratio(16, 9);
+@mixin aspect-ratio($ratio-or-width, $height: null) {
+  $padding: if($height, percentage($height/$ratio-or-width), percentage(1/$ratio-or-width));
+  &:before { content:''; float: left; padding-bottom: $padding;  }
+  &:after  { content:''; display: table; clear: both;  }
+}
+
+// Transparent Button
+@mixin transparent-button() {
+  background-color: transparent;
+  border: 0;
+}
+
+// Unstyled list
+@mixin list-unstyled {
+	padding-left: 0;
+	list-style: none;
+}

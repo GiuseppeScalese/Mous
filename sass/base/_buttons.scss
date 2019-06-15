@@ -1,0 +1,110 @@
+//Button style global
+.btn{
+	position: relative;
+	display: inline-block;
+	padding: 18px 38px;
+	font-weight: bold;
+  text-align: center;
+	width: 100%;
+	cursor:pointer;
+	border: 2px solid transparent;
+	outline: transparent;
+	margin-bottom: 10px;
+	@include text($base-font-size-buttons, $base-font-size-buttons, $text_line--small);
+	@include rounded-corners(45px);
+
+	@include breakpoint(sm) {
+			width: auto;
+			margin-bottom: 0;
+	}
+
+	text: {
+			decoration: none;
+	}
+
+  //Themes
+	&--black, &--black-no-icon {
+			@include btn-theme($button-black);
+			color: $button-white;
+	}
+
+	&--blue, &--blue-no-icon {
+			@include btn-theme($button-blue);
+			color: $button-white;
+	}
+
+	&--white-transparent, &--white-transparent-no-icon {
+			@include btn-theme($button-blue);
+			color: $blue;
+			background: transparent;
+	}
+
+	&--grey, &--grey-no-icon  {
+			@include btn-theme($button-grey);
+			color: $white;
+	}
+
+	&--white, &--white-no-icon  {
+			@include btn-theme($button-white);
+			//border-color: $button-blue;
+			color: $purple;
+	}
+
+	&--yellow, &--yellow-no-icon  {
+	    @include btn-theme($button-yellow);
+			color: $blue;
+  }
+
+	&--square {
+		@include rounded-corners(0);
+	}
+
+	&--white-no-icon, 	&--black-no-icon,	&--grey-no-icon, &--blue-no-icon, &--yellow-no-icon, &--blue-transparent-no-icon{
+		&:after{
+			content: '';
+		};
+	}
+
+	&--blue, 	&--black, &--white, &--yellow, &--grey, &--white-transparent{
+		.copy{
+			margin-left: 35px;
+			position: relative;
+			display: inline-block;
+		}
+	}
+
+	&--small {
+    	font-size: 50%;
+	}
+
+	&--medium {
+	   	font-size: 70%;
+	}
+
+	&--large {
+	    font-size: 90%;
+	}
+
+	&.blue-border{
+			border: 2px solid $blue;
+	}
+
+	&--blue-no-icon:hover, &--white-no-icon:hover, 	&--grey-no-icon:hover {
+    	background-color: white;
+	  	border: 2px solid $button-blue;
+	  	color: $button-blue;
+	}
+
+	&--yellow-no-icon:hover,	&--white-no-icon:hover  {
+			background-color: white;
+			border: 2px solid $button-yellow;
+	}
+
+	&--grey:hover {
+		background-color: $grey-2;
+	}
+
+	&--black:hover {
+		background-color: $grey;
+	}
+}

@@ -1,0 +1,49 @@
+//Text elements style global
+
+h1, h2, h3, h4 {
+    font-weight: 400;
+    padding-bottom: 15px;
+    margin: 0;
+    text-align: center;
+    word-break: break-word;
+    color: $white;
+}
+
+h1 {
+    @include text($text-size--x-large, $text-size--xx-large, $text_line--small);
+    letter-spacing: 1px;
+}
+
+h2 {
+    @include text($text-size--very-large, $text-size--x-large, $text_line--small);
+    letter-spacing: 2.71px;
+}
+
+h3 {
+    @include text($text-size--small, $text_size--small-medium, $text_line--medium);
+    letter-spacing: 0.6px;
+}
+
+h4 {
+    @include text($base-font-size, $text-size--small-medium, $text_line--medium);
+    letter-spacing: 0.4px;
+}
+
+p {
+	  @include text($text-size--small-medium, $text-size--small, $text_line--medium);
+    color: $black;
+    padding-bottom: 10px;
+    text-align: center;
+    margin: 0;
+}
+
+
+q {
+    quotes: "“" "”" "‘" "’";
+}
+q:before {
+    content: open-quote;
+}
+q:after {
+    content: close-quote;
+}
