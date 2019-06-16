@@ -513,22 +513,22 @@ ul, li {
 
 @font-face {
   font-family: 'OpenSans-Bold';
-  src: url("/fonts/OpenSans-Bold-webfont.eot");
-  src: url("/fonts/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/OpenSans-Bold-webfont.woff") format("woff"), url("/fonts/OpenSans-Bold-webfont.ttf") format("truetype"), url("/fonts/OpenSans-Bold-webfont.svg#Frutiger-Roman") format("svg");
+  src: url("../../fonts/OpenSans-Bold-webfont.eot");
+  src: url("../../fonts/OpenSans-Bold-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/OpenSans-Bold-webfont.woff") format("woff"), url("../../fonts/OpenSans-Bold-webfont.ttf") format("truetype"), url("../../fonts/OpenSans-Bold-webfont.svg#Frutiger-Roman") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'OpenSans-SemiBold';
-  src: url("/fonts/OpenSans-SemiBold-webfont.eot");
-  src: url("/fonts/OpenSans-SemiBold-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/OpenSans-SemiBold-webfont.woff2") format("woff2"), url("/fonts/OpenSans-SemiBold-webfont.woff") format("woff"), url("/fonts/OpenSans-SemiBold-webfont.ttf") format("truetype"), url("/fonts/OpenSans-SemiBold-webfont.svg#Frutiger-Roman") format("svg");
+  src: url("../../fonts/OpenSans-SemiBold-webfont.eot");
+  src: url("..//fonts/OpenSans-SemiBold-webfont.eot?#iefix") format("embedded-opentype"), url("../../fonts/OpenSans-SemiBold-webfont.woff2") format("woff2"), url("../../fonts/OpenSans-SemiBold-webfont.woff") format("woff"), url("../../fonts/OpenSans-SemiBold-webfont.ttf") format("truetype"), url("../../fonts/OpenSans-SemiBold-webfont.svg#Frutiger-Roman") format("svg");
   font-weight: normal;
   font-style: normal; }
 
 @font-face {
   font-family: 'OpenSans-Regular';
-  src: url("/fonts/OpenSans-Regular.eot");
-  src: url("/fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("/fonts/OpenSans-Regular.ttf") format("truetype"), url("/fonts/OpenSans-Regular.svg#Frutiger-Roman") format("svg");
+  src: url("../../fonts/OpenSans-Regular.eot");
+  src: url("../../fonts/OpenSans-Regular.eot?#iefix") format("embedded-opentype"), url("../../fonts/OpenSans-Regular.ttf") format("truetype"), url("../../fonts/OpenSans-Regular.svg#Frutiger-Roman") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -765,7 +765,7 @@ select {
   height: 30px;
   width: 100%;
   color: #1E185A;
-  font-family: "OpenSans-Bold", Helvetica, "OpenSans-Regular", Arial, sans-serif, Verdana;
+  font-family:  Helvetica, "OpenSans-Regular", Arial, sans-serif, Verdana;
   cursor: pointer; }
 
 select::-ms-expand {
@@ -846,7 +846,6 @@ input {
     width: 45px;
     font-size: 16px;
     line-height: 13.6px;
-    font-family: "OpenSans-Regular";
     color: #1E185A; }
     @media (min-width: 400px) {
       input[type="text"], input[type="search"], input[type="password"], input[type="number"] {
@@ -877,7 +876,7 @@ input.blue, select.blue {
   background-color: #1E185A;
   border: 1px solid #FFFFFF;
   color: #FFFFFF;
-  font-family: "OpenSans-Bold", Helvetica, "OpenSans-Regular", Arial, sans-serif, Verdana; }
+  font-family: Helvetica, "OpenSans-Regular", Arial, sans-serif, Verdana; }
 
 input.blue:-ms-input-placeholder {
   color: #FFFFFF; }
@@ -897,25 +896,25 @@ input.blue:-webkit-autofill:focus {
   background-position: center; }
 
 .icon-down-ico {
-  background-image: url(/images/svg/icon-down-purple-bg.svg); }
+  background-image: url(/icon-down-purple-bg.svg); }
 
 .icon-right-ico {
-  background-image: url(/images/svg/icon-right-purple-bg.svg); }
+  background-image: url(../../images/svg/icon-right-purple-bg.svg); }
 
 .icon-right-white-bg-ico {
-  background-image: url(/images/svg/icon-right-white-bg.svg); }
+  background-image: url(../../images/svg/icon-right-white-bg.svg); }
 
 .icon-close-white-bg {
-  background-image: url(/images/icons/close-white-bg-round.svg); }
+  background-image: url(../../images/icons/close-white-bg-round.svg); }
 
 .icon-close-purple-bg {
-  background-image: url(/images/svg/close-purple-bg.svg); }
+  background-image: url(../../images/svg/close-purple-bg.svg); }
 
 .icon-hamburger {
-  background-image: url(/images/icons/mobile-open-menu.svg); }
+  background-image: url(../../images/icons/mobile-open-menu.svg); }
 
 .icon-cart {
-  background-image: url(/images/icons/cart-icon.png); }
+  background-image: url(../../images/icons/cart-icon.png); }
 
 .icon-close-white-bg, .icon-close-purple-bg {
   position: absolute;
