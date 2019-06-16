@@ -95,26 +95,42 @@ module.exports = function(grunt) {
             }
         },
 
-        // Create one spritesheet from all the files in the icon's folder. Create a css file that references them.
-        sprite:{
-          all: {
-            src: 'icons/*.png',
-            dest: 'images/spritesheet.png',
-            destCss: 'demo/css/spritesheet.css'
+        imagemin:{
+          dist: {
+             options: {
+               optimizationLevel: 5
+             },
+             files: [{
+               expand: true,
+               cwd:'images/',
+               src: ['**/*.{png,jpg,gif,svg}'],
+               dest: 'demo/images/'
+             }]
+          }
+    		},
+
+        uglify: {
+          options: {
+            manage: false
+          },
+          my_target: {
+            files: [{
+              'demo/scripts/main.min.js' : ['scripts/components/*.js']
+            }]
           }
         },
 
-        // Minimise the spritesheet
-        imagemin: {                          // Task
-            static: {                          // Target
-              options: {                       // Target options
-
-              },
-              files: {                         // Dictionary of files
-                'images/spritesheet.png': 'images/spritesheet.png' // 'destination': 'source'
-              }
-            }
-          },
+        cssmin:{
+          my_target: {
+            files: [{
+              expand: true,
+              cwd: 'demo/css/',
+              src: ['*.css', '!*.min.css'],
+              dest: 'demo/css/',
+              ext: '.min.css'
+            }]
+          }
+        },
 
         // Autoprefix compiled css (upgraded from autoprefix)
         postcss: {
@@ -130,43 +146,8 @@ module.exports = function(grunt) {
                     "demo/css/style.css": "demo/css/style.css"
                 }
             }
-        },
-
-        // Copy directories into the WWW folder
-        copy: {
-            images: {
-                files: [
-                    // includes files within path and its sub-directories
-                    {
-                        expand: true,
-                        src: ["images/**"],
-                        dest: "../WWW/"
-                    }
-                ]
-            },
-            scripts: {
-                files: [
-                    // includes files within path and its sub-directories
-                    {
-                        expand: true,
-                        src: ["scripts/**"],
-                        dest: "../WWW/"
-                    }
-                ]
-            },
-            css: {
-                files: [
-                    // includes files within path and its sub-directories
-                    {
-                        expand: true,
-                        flatten: true,
-                        src: ["demo/css/*"],
-                        dest: "../WWW/css/"
-                    }
-                ]
-            }
         }
-    });
+ });
 
     // Replace all these load with the loader plugin
     grunt.loadNpmTasks("grunt-contrib-jade");
@@ -175,9 +156,10 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-connect");
-    grunt.loadNpmTasks('grunt-spritesmith');
     grunt.loadNpmTasks('grunt-contrib-imagemin');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.registerTask("serve", ["jade:compile", "sass:compile", "sprite", "postcss", "connect", "watch"]);
+    grunt.registerTask("serve", ["jade:compile", "sass:compile", "cssmin", "imagemin",  "postcss", "uglify", "connect", "watch"]);
     grunt.registerTask("default", ["serve"]);
 };

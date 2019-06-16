@@ -14,8 +14,8 @@ html
     meta( name="description", content="" )
     meta( name="viewport", content="width=device-width, initial-scale=1" )
     link( rel="stylesheet", href="css/style.css" )
-    link( rel="stylesheet", href="/bower_components/slick-carousel/slick/slick.css")
-    link( rel="stylesheet", href="/bower_components/slick-carousel/slick/slick-theme.css")
+    link( rel="stylesheet", href="css/vendor/slick.css")
+    link( rel="stylesheet", href="css/vendor/slick-theme.css")
     block styles
 
   block vars
@@ -36,14 +36,14 @@ html
 
     // local scripts for client dependencies. Keep order.
     //- Vendor
-    script( src="/scripts/vendor/jquery-3.3.1.min.js")
-    script( src="/bower_components/slick-carousel/slick/slick.min.js")
+    script( src="./scripts/vendor/jquery-3.3.1.min.js")
+    script( src="./scripts/vendor/slick.min.js")
 
     //- Custom
-    script( src="/scripts/components/main.js" )
+    script( src="./scripts/main.min.js" )
 
     // local scripts ends
 
     // page specific scripts start
-    block scripts
+    block scripts 
     // page specific scripts ends
