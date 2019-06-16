@@ -1,11 +1,11 @@
-Project configuation
+Project configuration
 =======
 
 ## Tech stack
 
 1. Used HTML5, CSS3, SASS, Jade template engine, Grunt task runner, JavaScript, Bower package manager
 2. Plugins used: Slick JS for carousel
-3. Mobile first approach implementation and responsive
+3. The page is responsive and mobile first approach implementation was used
 4. Added custom side menu implemented in Vanilla JavaScript
 5. Font: Helvetica
 6. Main colours: #000, #FFF, #C8C8C8, #373737
